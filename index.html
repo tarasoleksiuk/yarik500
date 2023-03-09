@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Yarik 500</title>
+        <style>
+            html {
+                overflow: hidden;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .container {
+            }
+            .test {
+                height: 100vh;
+            }
+            .test__iframe {
+                width: 100%;
+                height: 95%;
+                border: 0px;
+            }
+
+            .selection {
+                background: rgb(2, 0, 36);
+                background: linear-gradient(
+                    90deg,
+                    rgba(2, 0, 36, 1) 0%,
+                    rgba(9, 9, 121, 0.9444152661064426) 0%,
+                    rgba(0, 212, 255, 1) 100%
+                );
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .selection__title {
+                text-align: center;
+                color: #fff;
+            }
+            .selection_items {
+                display: flex;
+                justify-content: center;
+            }
+
+            .quick-minds {
+                height: 40px;
+                margin-bottom: 20px;
+            }
+
+            .advertisement {
+                background-color: #2158891f;
+                text-align: center;
+                height: 5%;
+                margin: 0px;
+                font-size: 0.9em;
+            }
+
+            .btn {
+                height: 40px;
+            }
+
+            .show {
+                display: block;
+            }
+            .hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="selection">
+                <div class="selection__title">
+                    <h1><i>Ярік 500 (Beta)</i></h1>
+                    <h2>Виберіть тему з запропонованого списку:</h2>
+                </div>
+                <div class="selection_items">
+                    <select class="quick-minds" name="quick-minds">
+                        <option value="781474588">Сім'я</option>
+                        <option value="781872688">Подорожі</option>
+                        <option value="781110421">Товари та послуги</option>
+                        <option value="781052030">Природа</option>
+                        <option value="780729332">Емоції</option>
+                        <option value="780670212">Здоров'я</option>
+                    </select>
+                </div>
+                <button class="btn">Створити тест</button>
+            </div>
+
+            <div class="test hide">
+                <iframe
+                    class="test__iframe"
+                    src="https://quizlet.com/732111337/test/embed?i=jjzd7&x=1jj1"
+                ></iframe>
+                <p class="advertisement">
+                    Розробник <b>Ярослав Олексюк</b> 2023р. Всі права захищені.
+                </p>
+            </div>
+        </div>
+
+        <script defer>
+            const selectedTest = document.querySelector('.quick-minds');
+            const selection = document.querySelector('.selection');
+            const test = document.querySelector('.test');
+            const testIframe = document.querySelector('.test__iframe');
+
+            const btn = document.querySelector('.btn');
+            btn.addEventListener('click', function (e) {
+                const ID = selectedTest.value;
+                const BASE_URL = `https://quizlet.com/${ID}/test/embed?i=jjzd7&x=1jj1`;
+
+                testIframe.setAttribute('src', BASE_URL);
+                console.log(testIframe);
+                selection.classList.add('hide');
+                test.classList.remove('hide');
+            });
+        </script>
+    </body>
+</html>
