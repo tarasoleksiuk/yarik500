@@ -23,11 +23,11 @@
 
             .selection {
                 background: rgb(2, 0, 36);
-                background: linear-gradient(
-                    90deg,
-                    rgba(2, 0, 36, 1) 0%,
-                    rgba(9, 9, 121, 0.9444152661064426) 0%,
-                    rgba(0, 212, 255, 1) 100%
+                background: radial-gradient(
+                    circle,
+                    rgb(245, 245, 245) 0%,
+                    rgba(46, 45, 45, 0.753) 0%,
+                    rgb(50, 40, 187) 100%
                 );
                 display: flex;
                 flex-direction: column;
@@ -65,6 +65,22 @@
             .hide {
                 display: none;
             }
+            .logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 0px;
+            }
+
+            .logo .logo__img {
+                width: 600px;
+                height: 288px;
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 50px;
+                border: 2px solid white;
+            }
         </style>
     </head>
     <body>
@@ -72,6 +88,13 @@
             <div class="selection">
                 <div class="selection__title">
                     <h1><i>Ярік 500 (Beta)</i></h1>
+                    <div class="logo">
+                        <img
+                            class="logo__img"
+                            src="./img/yarik.gif"
+                            alt="Logo"
+                        />
+                    </div>
                     <h2>Виберіть тему з запропонованого списку:</h2>
                 </div>
                 <div class="selection_items">
@@ -88,6 +111,10 @@
                         <option value="782476107">Релігія</option>
                         <option value="782946093">Рух та положеня</option>
                         <option value="783010513">Їжа</option>
+                        <option value="785586019">Речовини та матеріали</option>
+                        <option value="785578825">Погода</option>
+                        <option value="785573644">Величини</option>
+                        <option value="785529696">Робота</option>
                     </select>
                 </div>
                 <button class="btn">Створити тест</button>
