@@ -43,8 +43,8 @@
             }
 
             .quick-minds {
+                margin-bottom: 10px;
                 height: 40px;
-                margin-bottom: 20px;
             }
 
             .advertisement {
@@ -73,8 +73,8 @@
             }
 
             .logo .logo__img {
-                width: 600px;
-                height: 288px;
+                width: 400px;
+                height: 188px;
                 display: block;
                 max-width: 100%;
                 max-height: 100%;
@@ -82,10 +82,14 @@
                 border: 2px solid white;
             }
 
-            .idModule,
-            .btn-id {
-                height: 40px;
-                margin-bottom: 20px;
+            .idModule {
+                margin-bottom: 10px;
+            }
+            h2 {
+                margin: 10px;
+            }
+            h3 {
+                margin: 10px;
             }
         </style>
     </head>
@@ -93,13 +97,13 @@
         <div class="container">
             <div class="selection">
                 <div class="selection__title">
-                    <h1><i>Ярік 500 (Beta)</i></h1>
+                    <h2><i>Ярік 500 (Beta)</i></h2>
                     <input class="idModule" type="text" />
                     <button class="btn-id">Добавити тему по ID</button>
                     <div class="logo">
                         <img class="logo__img" src="./yarik.gif" alt="Logo" />
                     </div>
-                    <h2>Виберіть тему з запропонованого списку:</h2>
+                    <h3>Виберіть тему з запропонованого списку:</h3>
                 </div>
                 <div class="selection_items">
                     <select class="quick-minds" name="quick-minds">
@@ -138,7 +142,7 @@
                         <option class="newIdModule" value="">ID_MODULE</option>
                     </select>
                 </div>
-                <button class="btn">Створити тест</button>
+                <button class="btn"><b>Створити тест</b></button>
             </div>
 
             <div class="test hide">
