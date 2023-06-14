@@ -81,6 +81,12 @@
                 border-radius: 50px;
                 border: 2px solid white;
             }
+
+            .idModule,
+            .btn-id {
+                height: 40px;
+                margin-bottom: 20px;
+            }
         </style>
     </head>
     <body>
@@ -88,12 +94,12 @@
             <div class="selection">
                 <div class="selection__title">
                     <h1><i>Ярік 500 (Beta)</i></h1>
+                    <h2>Введіть id модуля:</h2>
+
+                    <input class="idModule" type="text" />
+                    <button class="btn-id">Створити тест по ід</button>
                     <div class="logo">
-                        <img
-                            class="logo__img"
-                            src="./yarik.gif"
-                            alt="Logo"
-                        />
+                        <img class="logo__img" src="./yarik.gif" alt="Logo" />
                     </div>
                     <h2>Виберіть тему з запропонованого списку:</h2>
                 </div>
@@ -111,11 +117,15 @@
                         <option value="782476107">10.Релігія</option>
                         <option value="782946093">11.Рух та положення</option>
                         <option value="788925311">12.Їжа</option>
-                        <option value="785586019">13.Речовини та матеріали</option>
+                        <option value="785586019">
+                            13.Речовини та матеріали
+                        </option>
                         <option value="785578825">14.Погода</option>
                         <option value="785573644">15.Величини</option>
                         <option value="785529696">16.Робота</option>
-                        <option value="787105997">17.Культура та мистецтво</option>
+                        <option value="787105997">
+                            17.Культура та мистецтво
+                        </option>
                         <option value="788931250">18.Природа</option>
                         <option value="788928742">19.Зовнішній вигляд</option>
                         <option value="788924093">20.Місто</option>
@@ -156,6 +166,21 @@
 
                 testIframe.setAttribute('src', BASE_URL);
                 console.log(testIframe);
+                selection.classList.add('hide');
+                test.classList.remove('hide');
+            });
+
+            //Test on id
+            const btnId = document.querySelector('.btn-id');
+            const inputId = document.querySelector('.idModule');
+            console.log(btnId);
+            console.log(inputId);
+
+            btnId.addEventListener('click', function (e) {
+                const ID = inputId.innerHTML;
+                const BASE_URL = `https://quizlet.com/${ID}/test/embed?i=jjzd7&x=1jj1`;
+
+                testIframe.setAttribute('src', BASE_URL);
                 selection.classList.add('hide');
                 test.classList.remove('hide');
             });
