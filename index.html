@@ -94,10 +94,8 @@
             <div class="selection">
                 <div class="selection__title">
                     <h1><i>Ярік 500 (Beta)</i></h1>
-                    <h2>Введіть id модуля:</h2>
-
                     <input class="idModule" type="text" />
-                    <button class="btn-id">Створити тест по ід</button>
+                    <button class="btn-id">Добавити тему по ID</button>
                     <div class="logo">
                         <img class="logo__img" src="./yarik.gif" alt="Logo" />
                     </div>
@@ -137,6 +135,7 @@
                         <option value="788942898">26.Спілкування</option>
                         <option value="790654945">27.Спорт та дозвілля</option>
                         <option value="801888903">28.Наука та освіта</option>
+                        <option class="newIdModule" value="">ID_MODULE</option>
                     </select>
                 </div>
                 <button class="btn">Створити тест</button>
@@ -173,16 +172,11 @@
             //Test on id
             const btnId = document.querySelector('.btn-id');
             const inputId = document.querySelector('.idModule');
-            console.log(btnId);
-            console.log(inputId);
 
             btnId.addEventListener('click', function (e) {
-                const ID = inputId.innerHTML;
-                const BASE_URL = `https://quizlet.com/${ID}/test/embed?i=jjzd7&x=1jj1`;
-
-                testIframe.setAttribute('src', BASE_URL);
-                selection.classList.add('hide');
-                test.classList.remove('hide');
+                const newIdModule = document.querySelector('.newIdModule');
+                newIdModule.innerText = inputId.value;
+                newIdModule.value = inputId.value;
             });
         </script>
     </body>
